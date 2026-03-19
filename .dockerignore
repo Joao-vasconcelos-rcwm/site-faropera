@@ -1,0 +1,7 @@
+.git
+.gitignore
+.claude
+*.docx
+videos/
+Dockerfile
+.dockerignore
