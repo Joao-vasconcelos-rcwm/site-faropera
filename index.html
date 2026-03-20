@@ -520,7 +520,8 @@
     }
     .divisao-card:hover::before { transform: scaleX(1); }
     .divisao-logo {
-      height: 50px;
+      height: 60px;
+      width: 160px;
       margin-bottom: 2rem;
       object-fit: contain;
       display: block;
@@ -531,6 +532,9 @@
       background: #fff;
       border-radius: 6px;
       padding: 6px 12px;
+    }
+    .divisao-logo--opera {
+      padding: 2px 6px;
     }
     .divisao-services {
       display: flex;
@@ -551,13 +555,9 @@
     }
     /* Company-specific colors */
     .divisao-card--faro::before { background: var(--white); }
-    .divisao-card--faro .divisao-name em { color: var(--white); }
-    .divisao-card--linha::before { background: var(--magenta); }
-    .divisao-card--linha .divisao-name em { color: var(--magenta); }
+    .divisao-card--linha::before { background: var(--white); }
     .divisao-card--linha .divisao-service { border-color: rgba(204,27,43,0.12); }
-
-    .divisao-card--opera::before { background: var(--orange); }
-    .divisao-card--opera .divisao-name em { color: var(--orange); }
+    .divisao-card--opera::before { background: var(--white); }
     .divisao-card--opera .divisao-service { border-color: rgba(204,27,43,0.12); }
     .divisao-name {
       font-family: var(--ff-serif);
@@ -566,7 +566,7 @@
       margin-bottom: 0.5rem;
       line-height: 1.2;
     }
-    .divisao-name em { color: var(--gold); font-style: normal; }
+    .divisao-name em { color: var(--white); font-style: normal; }
     .divisao-desc {
       font-size: 0.9rem;
       color: var(--light);
@@ -737,7 +737,9 @@
     .clientes-marquee {
       overflow: hidden;
       position: relative;
-      padding: 2rem 0;
+      padding: 2.5rem 0;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
     }
     .clientes-marquee::before,
     .clientes-marquee::after {
@@ -747,15 +749,15 @@
     }
     .clientes-marquee::before {
       left: 0;
-      background: linear-gradient(to right, var(--dark-2), transparent);
+      background: linear-gradient(to right, var(--dark-2) 0%, transparent 100%);
     }
     .clientes-marquee::after {
       right: 0;
-      background: linear-gradient(to left, var(--dark-2), transparent);
+      background: linear-gradient(to left, var(--dark-2) 0%, transparent 100%);
     }
     .marquee-track {
       display: flex;
-      animation: marquee 30s linear infinite;
+      animation: marquee 15s linear infinite;
       gap: 3rem;
       align-items: center;
     }
@@ -766,11 +768,14 @@
     }
     .cliente-logo-item {
       flex-shrink: 0;
-      height: 40px;
+      height: 55px;
+      width: 120px;
       object-fit: contain;
-      opacity: 0.7;
-      border-radius: 4px;
-      transition: opacity 0.3s;
+      opacity: 1;
+      border-radius: 6px;
+      transition: opacity 0.3s, transform 0.3s;
+      background: #fff;
+      padding: 10px 16px;
     }
     .cliente-logo-item:hover {
       opacity: 1;
@@ -1079,7 +1084,7 @@
       .estrutura-grid-small { grid-template-columns: 1fr; }
       .loc-text h3 { font-size: 1.5rem; }
       .marquee-track { gap: 2rem; }
-      .cliente-logo-item { height: 32px; }
+      .cliente-logo-item { height: 48px; width: 100px; padding: 8px 12px; }
       .stat-item { padding: 1.5rem 1rem; }
     }
 
@@ -1227,7 +1232,7 @@
 
     <div class="divisoes-grid cards-container">
       <div class="divisao-card divisao-card--faro card-item fade-up">
-        <img src="logo empresas/faro-logo-white.png" alt="Faro Multimídia" class="divisao-logo">
+        <img src="logo empresas/log_faro.png" alt="Faro Multimídia" class="divisao-logo divisao-logo--onwhite">
         <div class="divisao-name">Faro <em>Multimídia</em></div>
         <div class="divisao-desc">Produtora audiovisual full service especializada em vídeos corporativos, institucionais, comerciais para TV e campanhas de varejo. Pioneira em edição digital não linear no Brasil desde 1998.</div>
         <div class="divisao-services">
@@ -1251,7 +1256,7 @@
       </div>
 
       <div class="divisao-card divisao-card--opera card-item fade-up">
-        <img src="logo empresas/opera_prima_logo.png" alt="Ópera Prima" class="divisao-logo divisao-logo--onwhite">
+        <img src="logo empresas/opera_prima_logo.png" alt="Ópera Prima" class="divisao-logo divisao-logo--onwhite divisao-logo--opera">
         <div class="divisao-name">Ópera <em>Prima</em></div>
         <div class="divisao-desc">Produtora de cinema e conteúdo. Desenvolvimento de roteiros, produção de longas, curtas e webséries. Projetos premiados em festivais nacionais e internacionais.</div>
         <div class="divisao-services">
@@ -1315,7 +1320,7 @@
         <div class="play-icon"></div>
         <div class="portfolio-overlay">
           <div class="portfolio-item-title">Reload 2025</div>
-          <div class="portfolio-item-client">Projeto Original</div>
+          <div class="portfolio-item-client">SEBRAE</div>
         </div>
       </div>
 
@@ -1332,7 +1337,7 @@
         <div class="portfolio-poster"><img src="thumbnails/DOVER_ROLL.jpg" alt="Dover Roll"></div>
         <div class="play-icon"></div>
         <div class="portfolio-overlay">
-          <div class="portfolio-item-title">Comercial</div>
+          <div class="portfolio-item-title">Publicidade</div>
           <div class="portfolio-item-client">Dover Roll</div>
         </div>
       </div>
@@ -1351,7 +1356,7 @@
         <div class="play-icon"></div>
         <div class="portfolio-overlay">
           <div class="portfolio-item-title">Briefing de Segurança</div>
-          <div class="portfolio-item-client">EGTC Engetec</div>
+          <div class="portfolio-item-client">EGTC</div>
         </div>
       </div>
 
@@ -1377,7 +1382,7 @@
         <div class="portfolio-poster"><img src="thumbnails/VT_01_GRUPO_RAO_INSTITUCIONAL_30s_1920X1080.jpg" alt="Grupo RAO"></div>
         <div class="play-icon"></div>
         <div class="portfolio-overlay">
-          <div class="portfolio-item-title">Institucional</div>
+          <div class="portfolio-item-title">Comercial</div>
           <div class="portfolio-item-client">Grupo RAO</div>
         </div>
       </div>
@@ -1414,7 +1419,7 @@
         <div class="play-icon"></div>
         <div class="portfolio-overlay">
           <div class="portfolio-item-title">O Que é Doping?</div>
-          <div class="portfolio-item-client">Projeto Esportivo</div>
+          <div class="portfolio-item-client">COB &mdash; Comitê Olímpico do Brasil</div>
         </div>
       </div>
 
@@ -1422,7 +1427,7 @@
         <div class="portfolio-poster"><img src="thumbnails/VT_Amoedo_Design_blacks.jpg" alt="Amoedo Design Blacks"></div>
         <div class="play-icon"></div>
         <div class="portfolio-overlay">
-          <div class="portfolio-item-title">Design Blacks</div>
+          <div class="portfolio-item-title">Varejo Black Friday</div>
           <div class="portfolio-item-client">Amoedo</div>
         </div>
       </div>
@@ -1508,41 +1513,33 @@
       <div class="estrutura-showcase fade-up">
         <div class="estrutura-img">
           <img src="fotos/Estúdio.jpeg" alt="Estúdio Faro com vista para o Pão de Açúcar">
-          <div class="estrutura-img-label">Vista do Estúdio &mdash; Pão de Açúcar</div>
         </div>
         <div class="estrutura-img">
           <img src="fotos/vista produtora.png" alt="Vista panorâmica da produtora">
-          <div class="estrutura-img-label">Vista Panorâmica &mdash; Baía de Guanabara</div>
         </div>
       </div>
 
       <div class="estrutura-showcase fade-up">
         <div class="estrutura-img">
           <img src="fotos/WhatsApp Image 2026-03-18 at 17.37.06.jpeg" alt="Estudio completo com equipamentos Blackmagic">
-          <div class="estrutura-img-label">Setup Completo</div>
         </div>
         <div class="estrutura-img">
           <img src="fotos/WhatsApp Image 2026-03-18 at 17.37.02 (1).jpeg" alt="Estúdio Faro - Vista panorâmica com Pão de Açúcar">
-          <div class="estrutura-img-label">Estúdio &mdash; Vista Pão de Açúcar</div>
         </div>
       </div>
 
       <div class="estrutura-grid-small fade-up">
       <div class="estrutura-img">
         <img src="fotos/WhatsApp Image 2026-03-18 at 17.37.01 (3).jpeg" alt="Estúdio Faro - Produção multicâmera">
-        <div class="estrutura-img-label">Produção Multicâmera</div>
       </div>
       <div class="estrutura-img">
         <img src="fotos/WhatsApp Image 2026-03-18 at 17.37.01 (2).jpeg" alt="Monitoramento profissional">
-        <div class="estrutura-img-label">Monitoramento HD</div>
       </div>
       <div class="estrutura-img">
         <img src="fotos/WhatsApp Image 2026-03-18 at 17.37.07 (1).jpeg" alt="Camarim profissional">
-        <div class="estrutura-img-label">Camarim</div>
       </div>
       <div class="estrutura-img">
         <img src="fotos/WhatsApp Image 2026-03-18 at 17.37.04 (1).jpeg" alt="Camera Blackmagic com teleprompter">
-        <div class="estrutura-img-label">Blackmagic & Teleprompter</div>
       </div>
     </div>
     </div>
@@ -1569,9 +1566,8 @@
     <div class="contato-ctas fade-up">
       <a href="https://wa.me/552122205569?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20do%20Grupo%20Faropera." class="btn-whatsapp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Falar com um Consultor
+        Envie uma mensagem
       </a>
-      <a href="tel:+552122205569" class="btn-ghost">+55 21 2220-5569</a>
     </div>
   </section>
 
@@ -1597,7 +1593,7 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Contato</div>
-        <a href="tel:+552122205569">+55 21 2220-5569</a>
+        <a href="https://wa.me/552122205569" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:contato@farofilmes.com.br">contato@farofilmes.com.br</a>
         <a href="https://www.youtube.com/@farofilmes1" target="_blank" rel="noopener">YouTube</a>
       </div>
