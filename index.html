@@ -697,6 +697,32 @@
       border-color: rgba(204,27,43,0.7);
     }
 
+    .portfolio-youtube {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .btn-youtube {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--ff-cond);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-youtube:hover {
+      border-color: #CC1B2B;
+      background: rgba(204,27,43,0.1);
+      color: #CC1B2B;
+    }
+
     /* Video Modal */
     .video-modal {
       position: fixed; inset: 0;
@@ -766,14 +792,9 @@
     }
     .marquee-track {
       display: flex;
-      animation: marquee 15s linear infinite;
       gap: 3rem;
       align-items: center;
-    }
-    .marquee-track:hover { animation-play-state: paused; }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      will-change: transform;
     }
     .cliente-logo-item {
       flex-shrink: 0;
@@ -1444,6 +1465,12 @@
         </div>
       </div>
     </div>
+    <div class="portfolio-youtube fade-up">
+      <a href="https://www.youtube.com/@faromulti" target="_blank" rel="noopener" class="btn-youtube">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        Conheça mais trabalhos no YouTube
+      </a>
+    </div>
   </section>
 
   <!-- CLIENTES -->
@@ -1463,7 +1490,7 @@
         <img src="logo clientes/TAP.jpg" alt="TAP Portugal" class="cliente-logo-item">
         <img src="logo clientes/QUEIROZ GALVÃO.jpg" alt="Queiroz Galvão" class="cliente-logo-item">
         <img src="logo clientes/AMOEDO.jpg" alt="Amoedo" class="cliente-logo-item">
-        <img src="logo clientes/Logo EGTC.png" alt="EGTC" class="cliente-logo-item cliente-logo-item--dark">
+        <img src="logo clientes/Logo EGTC.png" alt="EGTC" class="cliente-logo-item">
         <img src="logo clientes/ELETROBRAS.jpg" alt="Eletrobras" class="cliente-logo-item">
         <img src="logo clientes/UNESCO.jpg" alt="UNESCO" class="cliente-logo-item">
         <img src="logo clientes/UNICEF.jpg" alt="Unicef" class="cliente-logo-item">
@@ -1488,7 +1515,7 @@
         <img src="logo clientes/TAP.jpg" alt="TAP Portugal" class="cliente-logo-item">
         <img src="logo clientes/QUEIROZ GALVÃO.jpg" alt="Queiroz Galvão" class="cliente-logo-item">
         <img src="logo clientes/AMOEDO.jpg" alt="Amoedo" class="cliente-logo-item">
-        <img src="logo clientes/Logo EGTC.png" alt="EGTC" class="cliente-logo-item cliente-logo-item--dark">
+        <img src="logo clientes/Logo EGTC.png" alt="EGTC" class="cliente-logo-item">
         <img src="logo clientes/ELETROBRAS.jpg" alt="Eletrobras" class="cliente-logo-item">
         <img src="logo clientes/UNESCO.jpg" alt="UNESCO" class="cliente-logo-item">
         <img src="logo clientes/UNICEF.jpg" alt="Unicef" class="cliente-logo-item">
@@ -1607,7 +1634,7 @@
         <div class="footer-col-title">Contato</div>
         <a href="https://wa.me/552122205569" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:contato@farofilmes.com.br">contato@farofilmes.com.br</a>
-        <a href="https://www.youtube.com/@farofilmes1" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.youtube.com/@faromulti" target="_blank" rel="noopener">YouTube Faro Multimídia</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1631,6 +1658,35 @@
       setTimeout(() => {
         document.getElementById('preloader').classList.add('hidden');
       }, 2200);
+
+      // === MARQUEE (infinite loop) ===
+      (() => {
+        const track = document.querySelector('.marquee-track');
+        if (!track) return;
+        const items = track.querySelectorAll('.cliente-logo-item');
+        const half = items.length / 2;
+        let pos = 0;
+        let speed = 1.2; // px per frame
+        let paused = false;
+        track.addEventListener('mouseenter', () => paused = true);
+        track.addEventListener('mouseleave', () => paused = false);
+        function animate() {
+          if (!paused) {
+            pos -= speed;
+            // Calculate width of first half of items
+            let halfWidth = 0;
+            for (let i = 0; i < half; i++) {
+              halfWidth += items[i].offsetWidth + 48; // 3rem gap ≈ 48px
+            }
+            if (Math.abs(pos) >= halfWidth) {
+              pos += halfWidth;
+            }
+            track.style.transform = `translateX(${pos}px)`;
+          }
+          requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+      })();
 
       // === NAV SCROLL ===
       const navbar = document.getElementById('navbar');
