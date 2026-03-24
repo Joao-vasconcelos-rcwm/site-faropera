@@ -638,21 +638,29 @@
     }
     .portfolio-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 40%, transparent 60%);
+      background: transparent;
       display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 1.5rem;
+      padding: 1rem;
       opacity: 1;
       transition: background 0.4s;
     }
     .portfolio-item:hover .portfolio-overlay {
-      background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 50%, rgba(204,27,43,0.05) 100%);
+      background: rgba(10,10,10,0.15);
+    }
+    .portfolio-text-card {
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 0.7rem 1rem;
+      border-radius: 4px;
+      border-left: 2px solid var(--gold);
     }
     .portfolio-item-title {
       font-family: var(--ff-serif);
       font-size: 1.2rem;
       font-weight: 400;
       color: var(--white);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
     .portfolio-item-client {
       font-family: var(--ff-cond);
@@ -661,7 +669,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      opacity: 0.7;
+      opacity: 0.85;
       transition: opacity 0.3s;
     }
     .portfolio-item:hover .portfolio-item-client { opacity: 1; }
@@ -1286,7 +1294,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/Proposito_que_Conecta_-_Constellation_CDS2026_no_subtitle.mp4">
         <div class="portfolio-poster"><img src="thumbnails/Proposito_que_Conecta_-_Constellation_CDS2026_no_subtitle.jpg" alt="Propósito que Conecta"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Propósito que Conecta</div>
           <div class="portfolio-item-client">Constellation Brands</div>
         </div>
@@ -1295,7 +1303,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/TRANSPETRO.mp4">
         <div class="portfolio-poster"><img src="thumbnails/TRANSPETRO.jpg" alt="Transpetro"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Transpetro</div>
           <div class="portfolio-item-client">Petrobras</div>
         </div>
@@ -1304,7 +1312,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/Manifesto_Constellation_para_eventos_internacionais.mp4">
         <div class="portfolio-poster"><img src="thumbnails/Manifesto_Constellation_para_eventos_internacionais.jpg" alt="Manifesto Internacional"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Manifesto Internacional</div>
           <div class="portfolio-item-client">Constellation</div>
         </div>
@@ -1313,7 +1321,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/FILME_ASCENZA_60_ANOS_v7.mp4">
         <div class="portfolio-poster"><img src="thumbnails/FILME_ASCENZA_60_ANOS_v7.jpg" alt="Ascenza 60 Anos"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Ascenza 60 Anos</div>
           <div class="portfolio-item-client">Ascenza</div>
         </div>
@@ -1322,7 +1330,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/RELOAD_2025_HORIZONTAL.mp4">
         <div class="portfolio-poster"><img src="thumbnails/RELOAD_2025_HORIZONTAL.jpg" alt="Reload 2025"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">SEBRAE</div>
           <div class="portfolio-item-client">Reload 2025</div>
         </div>
@@ -1331,7 +1339,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/QUEIROZ_GALVAO.mp4">
         <div class="portfolio-poster"><img src="thumbnails/QUEIROZ_GALVAO.jpg" alt="Queiroz Galvão"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Comercial</div>
           <div class="portfolio-item-client">Queiroz Galvão</div>
         </div>
@@ -1340,7 +1348,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/DOVER_ROLL.mp4">
         <div class="portfolio-poster"><img src="thumbnails/DOVER_ROLL.jpg" alt="Dover Roll"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Publicidade</div>
           <div class="portfolio-item-client">Dover Roll</div>
         </div>
@@ -1349,7 +1357,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/TAP.mp4">
         <div class="portfolio-poster"><img src="thumbnails/TAP.jpg" alt="TAP Portugal"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Escapadas de Viagem</div>
           <div class="portfolio-item-client">TAP Portugal</div>
         </div>
@@ -1358,7 +1366,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/EGTC_-_Briefing_de_Seguranca.mp4">
         <div class="portfolio-poster"><img src="thumbnails/EGTC_-_Briefing_de_Seguranca.jpg" alt="Briefing de Segurança"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Briefing de Segurança</div>
           <div class="portfolio-item-client">EGTC</div>
         </div>
@@ -1367,7 +1375,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/All_for_Carnival_by_Incentivo_Brasil_v2.mp4">
         <div class="portfolio-poster"><img src="thumbnails/All_for_Carnival_by_Incentivo_Brasil_v2.jpg" alt="All for Carnival"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">All for Carnival</div>
           <div class="portfolio-item-client">Incentivo Brasil</div>
         </div>
@@ -1376,7 +1384,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/Pax_Aeroporto_de_Jacarepagua_obras_entregues_Mpor.mp4">
         <div class="portfolio-poster"><img src="thumbnails/Pax_Aeroporto_de_Jacarepagua_obras_entregues_Mpor.jpg" alt="Aeroporto de Jacarepaguá"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Aeroporto de Jacarepaguá</div>
           <div class="portfolio-item-client">PAX / Infraero</div>
         </div>
@@ -1385,7 +1393,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/VT_01_GRUPO_RAO_INSTITUCIONAL_30s_1920X1080.mp4">
         <div class="portfolio-poster"><img src="thumbnails/VT_01_GRUPO_RAO_INSTITUCIONAL_30s_1920X1080.jpg" alt="Grupo RAO"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Publicidade</div>
           <div class="portfolio-item-client">Grupo RAO</div>
         </div>
@@ -1394,7 +1402,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/WebSerie_001_Hoje_Tem_Historia.mp4">
         <div class="portfolio-poster"><img src="thumbnails/WebSerie_001_Hoje_Tem_Historia.jpg" alt="Hoje Tem História"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Hoje Tem História</div>
           <div class="portfolio-item-client">Websérie Original</div>
         </div>
@@ -1403,7 +1411,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/Pacto_Ninguem_se_Cala_-_Telao_do_Maracana.mp4">
         <div class="portfolio-poster"><img src="thumbnails/Pacto_Ninguem_se_Cala_-_Telao_do_Maracana.jpg" alt="Pacto Ninguém se Cala"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Pacto Ninguém se Cala</div>
           <div class="portfolio-item-client">Telão do Maracanã</div>
         </div>
@@ -1412,7 +1420,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/AmoedoHomeDecor20pct_v1.mp4">
         <div class="portfolio-poster"><img src="thumbnails/AmoedoHomeDecor20pct_v1.jpg" alt="Amoedo Home Decor"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Home Decor</div>
           <div class="portfolio-item-client">Amoedo</div>
         </div>
@@ -1421,7 +1429,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/m0c9_-_os_destaques_do_modulo_-_o_que_e_doping___v5.mp4">
         <div class="portfolio-poster"><img src="thumbnails/m0c9_-_os_destaques_do_modulo_-_o_que_e_doping___v5.jpg" alt="O Que é Doping?"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">O Que é Doping?</div>
           <div class="portfolio-item-client">COB &mdash; Comitê Olímpico do Brasil</div>
         </div>
@@ -1430,7 +1438,7 @@
       <div class="portfolio-item fade-up" data-video="https://pub-d57a985988eb4d97b00acfa40e442d05.r2.dev/VT_Amoedo_Design_blacks.mp4">
         <div class="portfolio-poster"><img src="thumbnails/VT_Amoedo_Design_blacks.jpg" alt="Amoedo Design Blacks"></div>
         <div class="play-icon"></div>
-        <div class="portfolio-overlay">
+        <div class="portfolio-overlay"><div class="portfolio-text-card">
           <div class="portfolio-item-title">Varejo Black Friday</div>
           <div class="portfolio-item-client">Amoedo</div>
         </div>
