@@ -87,8 +87,22 @@
       color: var(--white);
       letter-spacing: 0.08em;
     }
+    .preloader-logos {
+      display: flex; align-items: center; gap: 2rem;
+      animation: fadeInUp 0.8s ease 0.3s both;
+    }
+    .preloader-logos img {
+      height: 36px; object-fit: contain;
+      background: #fff; border-radius: 5px;
+      padding: 5px 10px;
+      opacity: 0.85;
+    }
+    .preloader-logos .pl-sep {
+      width: 1px; height: 28px;
+      background: rgba(255,255,255,0.15);
+    }
     .preloader-bar {
-      width: 120px; height: 1px;
+      width: 160px; height: 1px;
       background: rgba(204,27,43,0.2);
       position: relative; overflow: hidden;
     }
@@ -102,6 +116,10 @@
     @keyframes preload {
       0% { transform: translateX(-100%); }
       100% { transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* === NAV === */
@@ -1196,7 +1214,13 @@
 
   <!-- PRELOADER -->
   <div class="preloader" id="preloader">
-    <div class="preloader-text">Grupo Faro & Ópera</div>
+    <div class="preloader-logos">
+      <img src="logo empresas/log_faro.png" alt="Faro Multimídia">
+      <div class="pl-sep"></div>
+      <img src="logo empresas/LOGOTIPO (1).jpg" alt="Linha 1 Publicidade">
+      <div class="pl-sep"></div>
+      <img src="logo empresas/opera_prima_logo.png" alt="Ópera Prima">
+    </div>
     <div class="preloader-bar"></div>
   </div>
 
